@@ -1,38 +1,784 @@
-.App {
-  text-align: center;
+:root {
+    --color-primary: #6f6af8;
+    --color-second: #aeabfc;
+    --color-primary-light: hsla(242, 90%, 72%, 0.18);
+    --color-primary-variant: #5854c7;
+    --color-red: #da0f3f;
+    --color-red-light: hsl(346, 87%, 46%, 15%);
+    --color-green: #00c476;
+    --color-green-light: hsl(156, 100%, 38%, 15%);
+    --color-gray-900: #3f3fc2;
+    --color-grey-700: #2d2b7c;
+    --color-gray-300: rgba(242, 242, 254, 0.3);
+    --color-gray-200: rgba(242, 242, 254, 0.7);
+    --color-white: #ffffff;
+    --color-bg: #1B75BC;
+    --color-black: #000000;
+    --color-orange: #e65c05;
+    --color-orange-black: #6e310a;
+    --color-blue-black: #00488a;
+    --transition: all 300ms ease;
+
+    --container-width-lg: 74%;
+    --container-width-md: 88%;
+    --form-width: 60%;
+
+    --card-border-radius-1: 0.3rem;
+    --card-border-radius-2: 0.5rem;
+    --card-border-radius-3: 0.8rem;
+    --card-border-radius-4: 2rem;
+    --card-border-radius-5: 5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*================= GENERAL ==========================*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    appearance: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var();
+    font-size: 0.9rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    width: var(--container-width-lg);
+    max-width: 2900px;
+    margin-inline: auto;
+    background-color: var(--color-white);
+    padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+section {
+    margin-top: 1rem;
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#esq {
+    margin-left: 390px;
+}
+
+#idreit {
+    margin-left: -20px;
+}
+
+#Encontro_internacional {
+    margin-left: 250px;
+    cursor: pointer;
+}
+
+#Tema {
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--color-green);
+    text-align: center;
+}
+
+#Tema1 {
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--color-blue-black);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#Tema3 {
+    text-decoration: none;
+    font-size: 12px;
+
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+#Tema4 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#Tema5 {
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+#label1 {
+    color: #da0f3f;
+}
+
+#_footer {
+    margin-top: 20px;
+}
+
+p {
+    color: #000000;
+}
+
+/*====================== GENERAL FORM =====================*/
+.form__section {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.form__section-container {
+    width: var(--form-width);
+}
+
+.alert__message {
+    padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--card-border-radius-2);
+}
+
+.alert__message.error {
+    background: var(--color-red-light);
+}
+
+.error {
+    color: var(--color-red);
+}
+
+.alert__message.success {
+    background: var(--color-green-light);
+}
+
+.success {
+    color: var(--color-green);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form__control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+input {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input:placeholder-shown {
+    color: var(--color-black);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+textarea:placeholder-shown {
+    color: var(--color-black);
+}
+
+input::placeholder {
+    color: var(--color-black);
+}
+
+textarea::placeholder {
+    color: var(--color-black);
+}
+
+input,
+textarea,
+select {
+    color: var(--color-black);
+    padding: 0.8rem 1.2rem;
+    background-color: var(--color-white);
+    border-color: var(--color-bg);
+    border-radius: var(--card-border-radius-3);
+    border: 1px solid var(--color-orange-black);
+    resize: none;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--color-orange-black);
+    border-radius: var(--card-border-radius-2);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--color-white);
+}
+
+.btn:hover {
+    background: var(--color-orange);
+    border-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+a {
+    color: red;
+    cursor: pointer;
+}
+
+@media(max-width:1280px) {
+    #esq {
+        margin-left: 350px;
+    }
+
+    #_footer {
+        margin-top: 30px;
+        width: 758px;
+    }
+}
+
+@media(max-width:1114px) {
+    #Encontro_internacional {
+        width: 190px;
+        margin-left: 230px;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+@media(max-width:390px) {
+    .container {
+        width: 100%;
+        background-color: var(--color-white);
+    }
+
+    #Encontro_internacional {
+        width: 120px;
+        margin-left: 100px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #Tema {
+        font-size: 28px;
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--color-green);
+        text-align: center;
+    }
+
+    #Tema1 {
+        text-decoration: none;
+        margin-top: 5px;
+        font-size: 8px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    #Tema3 {
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #Tema5 {
+        color: var(--color-orange-black);
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 10px;
+    }
+
+    #_footer {
+        align-items: center;
+        width: 398px;
+        margin-top: 20px;
+    }
+
+    h2 {
+        color: var(--color-white);
+        line-height: 1;
+    }
+
+    .logoM {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*====================== GENERAL FORM =====================*/
+    .form__section {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form__control {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    input {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    input:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    textarea:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    input::placeholder {
+        color: var(--color-black);
+    }
+
+    textarea::placeholder {
+        color: var(--color-black);
+    }
+
+    input,
+    textarea,
+    select {
+        color: var(--color-black);
+        padding: 0.8rem 1.2rem;
+        background-color: var(--color-white);
+        border-color: var(--color-bg);
+        border-radius: var(--card-border-radius-3);
+        border: 1px solid var(--color-orange-black);
+        resize: none;
+    }
+
+    .btn {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.6rem 1.2rem;
+        background-color: var(--color-orange-black);
+        border-radius: var(--card-border-radius-2);
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--color-white);
+    }
+
+    .btn:hover {
+        background: var(--color-orange);
+        border-color: var(--color-orange);
+        color: var(--color-white);
+    }
+}
+
+@media(max-width:430px) {
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.2;
+        overflow-x: hidden;
+        font-size: 0.2rem;
+    }
+
+    .container {
+        width: 100%;
+        background-color: var(--color-white);
+    }
+
+    #esq {
+        margin-left: 140px;
+        width: 140px;
+    }
+
+    #idreit {
+        margin-left: -20px;
+        width: 140px;
+    }
+
+    #Encontro_internacional {
+        width: 170px;
+        margin-left: 120px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #Tema {
+        font-size: 28px;
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--color-green);
+        text-align: center;
+    }
+
+    #Tema1 {
+        text-decoration: none;
+        color: var(--color-blue-black);
+        margin-top: 5px;
+        font-size: 8px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    #Tema3 {
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #Tema5 {
+        color: var(--color-black);
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 10px;
+    }
+
+    #label1 {
+        color: #da0f3f;
+    }
+
+    #_footer {
+        align-items: center;
+        width: 398px;
+        margin-top: 20px;
+    }
+
+    p {
+        color: #000000;
+    }
+
+    h2 {
+        color: var(--color-white);
+        line-height: 1;
+    }
+
+    a {
+        color: var(--color-white);
+        transition: var(--transition);
+    }
+
+    .logoM {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*====================== GENERAL FORM =====================*/
+    .form__section {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    .alert__message {
+        padding: 0.8rem 1.4rem;
+        margin-bottom: 1rem;
+        border-radius: var(--card-border-radius-2);
+    }
+
+    .alert__message.error {
+        background: var(--color-red-light);
+    }
+
+    .error {
+        color: var(--color-red);
+    }
+
+    .alert__message.success {
+        background: var(--color-green-light);
+    }
+
+    .success {
+        color: var(--color-green);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form__control {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    input {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    input:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    textarea:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    input::placeholder {
+        color: var(--color-black);
+    }
+
+    textarea::placeholder {
+        color: var(--color-black);
+    }
+
+    input,
+    textarea,
+    select {
+        color: var(--color-black);
+        padding: 0.8rem 1.2rem;
+        background-color: var(--color-white);
+        border-color: var(--color-orange-black);
+        border-radius: var(--card-border-radius-3);
+        border: 1px solid var(--color-orange-black);
+        resize: none;
+    }
+
+    .form__section small {
+        font-size: 12px;
+        margin-top: -1rem;
+        color: var(--color-white);
+        text-align: center;
+    }
+
+    .form__section small a {
+        color: var(--color-bg);
+    }
+
+    .btn {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.6rem 1.2rem;
+        background-color: var(--color-orange-black);
+        border-radius: var(--card-border-radius-2);
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--color-white);
+    }
+
+    .btn.sn {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .btn.danger {
+        background: var(--color-red);
+    }
+
+    .btn:hover {
+        background: var(--color-orange);
+        border-color: var(--color-orange);
+        color: var(--color-white);
+    }
+}
+
+@media(max-width:900px) {
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.2;
+        overflow-x: hidden;
+        font-size: 0.2rem;
+    }
+
+    .container {
+        width: 100%;
+        background-color: var(--color-white);
+    }
+
+    #esq {
+        margin-left: 140px;
+        width: 140px;
+    }
+
+    #idreit {
+        margin-left: -20px;
+        width: 140px;
+    }
+
+    #Encontro_internacional {
+        width: 170px;
+        margin-left: 340px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #Tema {
+        font-size: 28px;
+        font-family: 'Times New Roman', Times, serif;
+        color: var(--color-green);
+        text-align: center;
+    }
+
+    #Tema1 {
+        text-decoration: none;
+        color: var(--color-blue-black);
+        margin-top: 5px;
+        font-size: 8px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    #Tema3 {
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #Tema5 {
+        color: var(--color-black);
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 10px;
+    }
+
+    #label1 {
+        color: #da0f3f;
+    }
+
+    #_footer {
+        align-items: center;
+        width: 398px;
+        margin-top: 20px;
+    }
+
+    p {
+        color: #000000;
+    }
+
+    h2 {
+        color: var(--color-white);
+        line-height: 1;
+    }
+
+    a {
+        color: var(--color-white);
+        transition: var(--transition);
+    }
+
+    .logoM {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /*====================== GENERAL FORM =====================*/
+    .form__section {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    .alert__message {
+        padding: 0.8rem 1.4rem;
+        margin-bottom: 1rem;
+        border-radius: var(--card-border-radius-2);
+    }
+
+    .alert__message.error {
+        background: var(--color-red-light);
+    }
+
+    .error {
+        color: var(--color-red);
+    }
+
+    .alert__message.success {
+        background: var(--color-green-light);
+    }
+
+    .success {
+        color: var(--color-green);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form__control {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    input {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    input:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    textarea:placeholder-shown {
+        color: var(--color-black);
+    }
+
+    input::placeholder {
+        color: var(--color-black);
+    }
+
+    textarea::placeholder {
+        color: var(--color-black);
+    }
+
+    input,
+    textarea,
+    select {
+        color: var(--color-black);
+        padding: 0.8rem 1.2rem;
+        background-color: var(--color-white);
+        border-color: var(--color-orange-black);
+        border-radius: var(--card-border-radius-3);
+        border: 1px solid var(--color-orange-black);
+        resize: none;
+    }
+
+    .form__section small {
+        font-size: 12px;
+        margin-top: -1rem;
+        color: var(--color-white);
+        text-align: center;
+    }
+
+    .form__section small a {
+        color: var(--color-bg);
+    }
+
+    .btn {
+        display: inline-block;
+        width: fit-content;
+        padding: 0.6rem 1.2rem;
+        background-color: var(--color-orange-black);
+        border-radius: var(--card-border-radius-2);
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--color-white);
+    }
+
+    .btn.sn {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .btn.danger {
+        background: var(--color-red);
+    }
+
+    .btn:hover {
+        background: var(--color-orange);
+        border-color: var(--color-orange);
+        color: var(--color-white);
+    }
 }
