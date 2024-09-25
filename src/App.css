@@ -1,33 +1,19 @@
 :root {
-    --color-primary: #6f6af8;
-    --color-second: #aeabfc;
-    --color-primary-light: hsla(242, 90%, 72%, 0.18);
-    --color-primary-variant: #5854c7;
     --color-red: #da0f3f;
-    --color-red-light: hsl(346, 87%, 46%, 15%);
     --color-green: #00c476;
-    --color-green-light: hsl(156, 100%, 38%, 15%);
-    --color-gray-900: #3f3fc2;
-    --color-grey-700: #2d2b7c;
     --color-gray-300: rgba(242, 242, 254, 0.3);
-    --color-gray-200: rgba(242, 242, 254, 0.7);
     --color-white: #ffffff;
-    --color-bg: #1B75BC;
     --color-black: #000000;
     --color-orange: #e65c05;
     --color-orange-black: #6e310a;
     --color-blue-black: #00488a;
     --transition: all 300ms ease;
 
-    --container-width-lg: 74%;
-    --container-width-md: 88%;
-    --form-width: 60%;
+    --container-width-lg: 100%;
 
-    --card-border-radius-1: 0.3rem;
+
     --card-border-radius-2: 0.5rem;
     --card-border-radius-3: 0.8rem;
-    --card-border-radius-4: 2rem;
-    --card-border-radius-5: 5rem;
 }
 
 /*================= GENERAL ==========================*/
@@ -48,14 +34,16 @@ body {
     overflow-x: hidden;
     background-color: var();
     font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 10px;
 }
 
 .container {
     width: var(--container-width-lg);
-    max-width: 2900px;
-    margin-inline: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     background-color: var(--color-white);
-    padding: 10px;
+    padding: 20px;
 }
 
 section {
@@ -63,17 +51,10 @@ section {
     width: 100%;
 }
 
-#esq {
-    margin-left: 390px;
-}
-
-#idreit {
-    margin-left: -20px;
-}
-
 #Encontro_internacional {
-    margin-left: 250px;
+    margin-left: 450px;
     cursor: pointer;
+    align-items: center;
 }
 
 #Tema {
@@ -118,11 +99,10 @@ section {
 
 #_footer {
     margin-top: 20px;
+    width: 100%;
 }
 
-p {
-    color: #000000;
-}
+
 
 /*====================== GENERAL FORM =====================*/
 .form__section {
@@ -133,28 +113,6 @@ p {
 
 .form__section-container {
     width: var(--form-width);
-}
-
-.alert__message {
-    padding: 0.8rem 1.4rem;
-    margin-bottom: 1rem;
-    border-radius: var(--card-border-radius-2);
-}
-
-.alert__message.error {
-    background: var(--color-red-light);
-}
-
-.error {
-    color: var(--color-red);
-}
-
-.alert__message.success {
-    background: var(--color-green-light);
-}
-
-.success {
-    color: var(--color-green);
 }
 
 form {
@@ -191,8 +149,7 @@ textarea::placeholder {
 }
 
 input,
-textarea,
-select {
+textarea {
     color: var(--color-black);
     padding: 0.8rem 1.2rem;
     background-color: var(--color-white);
@@ -220,7 +177,7 @@ select {
 }
 
 a {
-    color: red;
+    color: var(--color-red);
     cursor: pointer;
 }
 
@@ -475,28 +432,6 @@ a {
         height: 100vh;
     }
 
-    .alert__message {
-        padding: 0.8rem 1.4rem;
-        margin-bottom: 1rem;
-        border-radius: var(--card-border-radius-2);
-    }
-
-    .alert__message.error {
-        background: var(--color-red-light);
-    }
-
-    .error {
-        color: var(--color-red);
-    }
-
-    .alert__message.success {
-        background: var(--color-green-light);
-    }
-
-    .success {
-        color: var(--color-green);
-    }
-
     form {
         display: flex;
         flex-direction: column;
@@ -562,16 +497,6 @@ a {
         transition: var(--transition);
         color: var(--color-white);
     }
-
-    .btn.sn {
-        padding: 0.3rem 0.7rem;
-        font-size: 0.8rem;
-    }
-
-    .btn.danger {
-        background: var(--color-red);
-    }
-
     .btn:hover {
         background: var(--color-orange);
         border-color: var(--color-orange);
@@ -679,28 +604,6 @@ a {
         height: 100vh;
     }
 
-    .alert__message {
-        padding: 0.8rem 1.4rem;
-        margin-bottom: 1rem;
-        border-radius: var(--card-border-radius-2);
-    }
-
-    .alert__message.error {
-        background: var(--color-red-light);
-    }
-
-    .error {
-        color: var(--color-red);
-    }
-
-    .alert__message.success {
-        background: var(--color-green-light);
-    }
-
-    .success {
-        color: var(--color-green);
-    }
-
     form {
         display: flex;
         flex-direction: column;
@@ -765,15 +668,6 @@ a {
         cursor: pointer;
         transition: var(--transition);
         color: var(--color-white);
-    }
-
-    .btn.sn {
-        padding: 0.3rem 0.7rem;
-        font-size: 0.8rem;
-    }
-
-    .btn.danger {
-        background: var(--color-red);
     }
 
     .btn:hover {

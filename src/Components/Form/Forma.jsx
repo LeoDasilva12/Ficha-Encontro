@@ -76,14 +76,14 @@ export default function Form() {
                     doc.addImage(BarraAzul, 'PNG', 0, 0, BarradWidth, BarraHeight);
 
                     // Adicionar as insignias MED dentro do PDF
-                    const logoMedWidth = 45;
-                    const logoMedHeight = 25;
-                    doc.addImage(logoMED, 'PNG', 5, 10, logoMedWidth, logoMedHeight);
+                    // const logoMedWidth = 45;
+                    // const logoMedHeight = 25;
+                    // doc.addImage(logoMED, 'PNG', 5, 10, logoMedWidth, logoMedHeight);
 
                     // Adicionar as insignias MED dentro do PDF
-                    const logoMirexWidth = 45;
-                    const logoMirexHeight = 25;
-                    doc.addImage(logoMirex, 'PNG', 155, 10, logoMirexWidth, logoMirexHeight);
+                    // const logoMirexWidth = 45;
+                    // const logoMirexHeight = 25;
+                    // doc.addImage(logoMirex, 'PNG', 155, 10, logoMirexWidth, logoMirexHeight);
 
                     // Adicionar insígnia no centro do PDF
                     const logoEncontroWidth = 65;
@@ -213,16 +213,9 @@ export default function Form() {
                         {/* Deixar o textarea com valor de caracteres em infinito*/}
                         <textarea name="resumo" id="Tema4" cols="30" rows="10" placeholder="Palavras Chaves" onChange={valorInput} value={data.resumo} maxLength={990000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000} required></textarea>
 
-                        {/* Criar o campo, quando o usuario digitar valor no campo, chamar com onChange a funcao valorInput*/}
-                        {/* Editar o valor do placeholder e remover as bordas*/}
-                        {/* <input type="file" onChange={valorInput} name="file"  value={data.file} accept=".doc,.docx,.pdf" required />*/}
-                        
-                        {/* Imprimir a mensagem retornada da API*/}
-                        {/*mensagem ? <p>{mensagem}</p> : ""*/}
-
                         <input type="submit" name="Increver" value="Inscrever-se" className="btn" />
                     </form>
-                    <label htmlFor="" onClick={WordDoc} >Por favor envie o seu resumo no formato Word.doc -->  <a onClick={WordDoc} > Enviar Resumo</a></label>
+                    <label htmlFor="" onClick={WordDoc} >Por favor envie o seu resumo no formato Word.doc -- <a onClick={WordDoc} > Enviar Resumo</a></label>
                     {/* <EmailButton />*/}
                     <img src={footerimg} width="780" id="_footer" />
                 </div>
